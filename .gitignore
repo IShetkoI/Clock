@@ -1,0 +1,6 @@
+/cmake-build-debug/
+/Debug/
+.*
+/Clock Debug.launch/
+/CMakeLists_template.txt/
+/README.md/
