@@ -60,20 +60,19 @@
 /**
   * Initializes the Global MSP.
   */
-void HAL_MspInit(void)
-{
-  /* USER CODE BEGIN MspInit 0 */
+void HAL_MspInit(void) {
+    /* USER CODE BEGIN MspInit 0 */
 
-  /* USER CODE END MspInit 0 */
+    /* USER CODE END MspInit 0 */
 
-  __HAL_RCC_PWR_CLK_ENABLE();
-  __HAL_RCC_SYSCFG_CLK_ENABLE();
+    __HAL_RCC_PWR_CLK_ENABLE();
+    __HAL_RCC_SYSCFG_CLK_ENABLE();
 
-  /* System interrupt init*/
+    /* System interrupt init*/
 
-  /* USER CODE BEGIN MspInit 1 */
+    /* USER CODE BEGIN MspInit 1 */
 
-  /* USER CODE END MspInit 1 */
+    /* USER CODE END MspInit 1 */
 }
 
 /**
@@ -82,22 +81,20 @@ void HAL_MspInit(void)
 * @param htim_base: TIM_Base handle pointer
 * @retval None
 */
-void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
-{
-  if(htim_base->Instance==TIM1)
-  {
-  /* USER CODE BEGIN TIM1_MspInit 0 */
+void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim_base) {
+    if (htim_base->Instance == TIM1) {
+        /* USER CODE BEGIN TIM1_MspInit 0 */
 
-  /* USER CODE END TIM1_MspInit 0 */
-    /* Peripheral clock enable */
-    __HAL_RCC_TIM1_CLK_ENABLE();
-    /* TIM1 interrupt Init */
-    HAL_NVIC_SetPriority(TIM1_UP_TIM10_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
-  /* USER CODE BEGIN TIM1_MspInit 1 */
+        /* USER CODE END TIM1_MspInit 0 */
+        /* Peripheral clock enable */
+        __HAL_RCC_TIM1_CLK_ENABLE();
+        /* TIM1 interrupt Init */
+        HAL_NVIC_SetPriority(TIM1_UP_TIM10_IRQn, 0, 0);
+        HAL_NVIC_EnableIRQ(TIM1_UP_TIM10_IRQn);
+        /* USER CODE BEGIN TIM1_MspInit 1 */
 
-  /* USER CODE END TIM1_MspInit 1 */
-  }
+        /* USER CODE END TIM1_MspInit 1 */
+    }
 
 }
 
@@ -107,22 +104,20 @@ void HAL_TIM_Base_MspInit(TIM_HandleTypeDef* htim_base)
 * @param htim_base: TIM_Base handle pointer
 * @retval None
 */
-void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
-{
-  if(htim_base->Instance==TIM1)
-  {
-  /* USER CODE BEGIN TIM1_MspDeInit 0 */
+void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef *htim_base) {
+    if (htim_base->Instance == TIM1) {
+        /* USER CODE BEGIN TIM1_MspDeInit 0 */
 
-  /* USER CODE END TIM1_MspDeInit 0 */
-    /* Peripheral clock disable */
-    __HAL_RCC_TIM1_CLK_DISABLE();
+        /* USER CODE END TIM1_MspDeInit 0 */
+        /* Peripheral clock disable */
+        __HAL_RCC_TIM1_CLK_DISABLE();
 
-    /* TIM1 interrupt DeInit */
-    HAL_NVIC_DisableIRQ(TIM1_UP_TIM10_IRQn);
-  /* USER CODE BEGIN TIM1_MspDeInit 1 */
+        /* TIM1 interrupt DeInit */
+        HAL_NVIC_DisableIRQ(TIM1_UP_TIM10_IRQn);
+        /* USER CODE BEGIN TIM1_MspDeInit 1 */
 
-  /* USER CODE END TIM1_MspDeInit 1 */
-  }
+        /* USER CODE END TIM1_MspDeInit 1 */
+    }
 
 }
 
